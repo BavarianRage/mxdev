@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leistungen - MXDEV</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Schneefall Animation -->
+    <div class="snowfall" id="snowfall"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="MXDEV Logo" class="logo-image">
+                <span>MXDEV</span>
+            </div>
+            
+            <!-- Burger Menu Button -->
+            <button class="burger-menu" id="burgerMenu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Fullscreen Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-content">
+            <div class="menu-links">
+                <a href="index.html" class="menu-link">
+                    <span class="menu-number">01</span>
+                    <span class="menu-text">Home</span>
+                </a>
+                <a href="leistungen.html" class="menu-link active-page">
+                    <span class="menu-number">02</span>
+                    <span class="menu-text">Leistungen</span>
+                </a>
+                <a href="projekte.html" class="menu-link">
+                    <span class="menu-number">03</span>
+                    <span class="menu-text">Projekte</span>
+                </a>
+                <a href="about.html" class="menu-link">
+                    <span class="menu-number">04</span>
+                    <span class="menu-text">Über mich</span>
+                </a>
+                <a href="kontakt.html" class="menu-link">
+                    <span class="menu-number">05</span>
+                    <span class="menu-text">Kontakt</span>
+                </a>
+                <a href="shop.html" class="menu-link shop-highlight">
+                    <span class="menu-number">06</span>
+                    <span class="menu-text">Shop</span>
+                </a>
+            </div>
+            
+            <div class="menu-footer">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/mxdev.eu/" target="_blank" class="social-link" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="18" cy="6" r="1" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.reddit.com/r/MXDEV/" target="_blank" class="social-link" aria-label="Reddit">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="9" cy="11" r="1.5" fill="currentColor"/>
+                            <circle cx="15" cy="11" r="1.5" fill="currentColor"/>
+                            <path d="M8 15C8 15 9.5 17 12 17C14.5 17 16 15 16 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">
+                Meine <span class="gradient-text">Leistungen</span>
+            </h1>
+            <p class="page-subtitle">Von Webdesign bis Discord Bots – Alle Services auf einen Blick</p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-grid-page">
+                
+                <!-- Service 1: Webdesign -->
+                <div class="service-card-large">
+                    <div class="service-icon-large">🌐</div>
+                    <h2 class="service-title">Webdesign für Firmen</h2>
+                    <p class="service-description">
+                        Moderne, responsive Websites für Unternehmen jeder Größe. Von der Landing Page bis zum kompletten Corporate Web-Auftritt – professionell, schnell und SEO-optimiert. Perfekt abgestimmt auf deine Marke und Zielgruppe.
+                    </p>
+                    <ul class="service-features-list">
+                        <li>Responsive Design für alle Geräte</li>
+                        <li>SEO-Optimierung & Performance</li>
+                        <li>Content Management Systeme</li>
+                        <li>E-Commerce Lösungen</li>
+                    </ul>
+                    <a href="shop.html" class="service-btn">
+                        <span>Mehr im Shop</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Service 2: Softwareprogrammierung -->
+                <div class="service-card-large">
+                    <div class="service-icon-large">💻</div>
+                    <h2 class="service-title">Softwareprogrammierung</h2>
+                    <p class="service-description">
+                        Custom Software-Lösungen für deine individuellen Anforderungen. Ob Desktop-Anwendungen, Automatisierungs-Tools oder komplexe Systeme – ich entwickle maßgeschneiderte Software, die genau zu deinen Prozessen passt.
+                    </p>
+                    <ul class="service-features-list">
+                        <li>Desktop & Web-Applikationen</li>
+                        <li>Automatisierungs-Tools</li>
+                        <li>API-Entwicklung & Integration</li>
+                        <li>Cross-Platform Lösungen</li>
+                    </ul>
+                    <a href="shop.html" class="service-btn">
+                        <span>Mehr im Shop</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Service 3: Datenbank-Verbindungen -->
+                <div class="service-card-large">
+                    <div class="service-icon-large">🗄️</div>
+                    <h2 class="service-title">Datenbank-Verbindungen</h2>
+                    <p class="service-description">
+                        Professionelle Datenbank-Anbindungen und -Management. MySQL, PostgreSQL, MongoDB – sichere und performante Datenbankstrukturen für deine Anwendungen. Inklusive Backup-Strategien und Optimierung.
+                    </p>
+                    <ul class="service-features-list">
+                        <li>MySQL, PostgreSQL, MongoDB</li>
+                        <li>Datenbank-Design & Optimierung</li>
+                        <li>API-Schnittstellen zu Datenbanken</li>
+                        <li>Backup & Security Konzepte</li>
+                    </ul>
+                    <a href="shop.html" class="service-btn">
+                        <span>Mehr im Shop</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Service 4: Minecraft Plugins & Mods -->
+                <div class="service-card-large featured-service">
+                    <div class="featured-badge">Beliebt</div>
+                    <div class="service-icon-large">⚡</div>
+                    <h2 class="service-title">Minecraft Plugins & Mods</h2>
+                    <p class="service-description">
+                        Custom Minecraft Plugins und Mods für Spigot, Paper und Forge. Von simplen Features bis zu kompletten Netzwerk-Systemen. Optimiert für Performance und perfekt auf deinen Server abgestimmt.
+                    </p>
+                    <ul class="service-features-list">
+                        <li>Spigot, Paper & Forge Plugins</li>
+                        <li>Custom Gameplay Features</li>
+                        <li>Netzwerk-Systeme & Bungee</li>
+                        <li>Performance-Optimierung</li>
+                    </ul>
+                    <a href="shop.html" class="service-btn">
+                        <span>Mehr im Shop</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Service 5: Discord Bots -->
+                <div class="service-card-large">
+                    <div class="service-icon-large">🤖</div>
+                    <h2 class="service-title">Discord Bots</h2>
+                    <p class="service-description">
+                        Professionelle Discord Bots mit individuellen Funktionen. Moderation, Musik, Levelsysteme, Tickets, Analytics – alles was dein Discord-Server braucht. Zuverlässig, schnell und mit 24/7 Uptime.
+                    </p>
+                    <ul class="service-features-list">
+                        <li>Moderation & Anti-Spam</li>
+                        <li>Levelsysteme & Ranking</li>
+                        <li>Ticket-Systeme & Support</li>
+                        <li>Custom Commands & Features</li>
+                    </ul>
+                    <a href="shop.html" class="service-btn">
+                        <span>Mehr im Shop</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Service 6: Logo & Webdesign -->
+                <div class="service-card-large">
+                    <div class="service-icon-large">🎨</div>
+                    <h2 class="service-title">Logo & Grafikdesign</h2>
+                    <p class="service-description">
+                        Professionelles Logo-Design und Corporate Identity. Von der Konzeption bis zum finalen Design – einzigartige Logos, die deine Marke perfekt repräsentieren. Inklusive verschiedener Dateiformate und Varianten.
+                    </p>
+                    <ul class="service-features-list">
+                        <li>Logo-Design & Branding</li>
+                        <li>Social Media Graphics</li>
+                        <li>Banner & Header Design</li>
+                        <li>Corporate Identity Pakete</li>
+                    </ul>
+                    <a href="shop.html" class="service-btn">
+                        <span>Mehr im Shop</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2 class="cta-title">Bereit für dein Projekt?</h2>
+                <p class="cta-text">Lass uns gemeinsam deine Vision verwirklichen. Kontaktiere mich für ein unverbindliches Beratungsgespräch!</p>
+                <div class="cta-buttons">
+                    <a href="kontakt.html" class="btn btn-primary btn-large">Jetzt Kontakt aufnehmen</a>
+                    <a href="shop.html" class="btn btn-secondary btn-large">Zum Shop</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="logo.png" alt="MXDEV Logo" class="logo-image">
+                        <span>MXDEV</span>
+                    </div>
+                    <p>Futuristische Development Lösungen</p>
+                </div>
+                <div class="footer-right">
+                    <a href="kontakt.html" class="footer-contact-btn">Kontakt aufnehmen</a>
+                    <p class="footer-copyright">&copy; 2024 MXDEV. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Schneefall Animation
+        function createSnowflake() {
+            const snowfall = document.getElementById('snowfall');
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + '%';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.opacity = Math.random();
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            
+            snowfall.appendChild(snowflake);
+            
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+        
+        setInterval(createSnowflake, 200);
+
+        // Burger Menu Toggle
+        const burgerMenu = document.getElementById('burgerMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        let menuOpen = false;
+
+        burgerMenu.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            
+            if (menuOpen) {
+                burgerMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            } else {
+                burgerMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+                menuOpen = false;
+            });
+        });
+    </script>
+</body>
+</html>
