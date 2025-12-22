@@ -5,54 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MXDEV Shop</title>
 <link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="style.css">
 <style>
-/* ===== MXDEV-Futuristic-Style ===== */
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: #0b0f1a;
-    color: #e0e0e0;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: #020617;
-    border-bottom: 1px solid #1e293b;
-}
-
-header strong {
-    font-size: 1.5rem;
-}
-
-.cart {
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-h1 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 40px;
-    background: linear-gradient(90deg,#4f46e5,#2563eb);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
+/* ===== Shop-spezifisches Styling ===== */
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
     gap: 30px;
+    margin: 40px 20px;
 }
-
 .product {
     background: #111827;
     border-radius: 12px;
@@ -60,39 +21,21 @@ h1 {
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
     transition: transform 0.3s;
 }
-
-.product:hover {
-    transform: translateY(-5px);
-}
-
+.product:hover { transform: translateY(-5px); }
 .product img {
     width: 100%;
     height: 180px;
     object-fit: cover;
 }
-
 .product-content {
     padding: 20px;
 }
-
 .product-content h3 {
     margin: 0 0 10px 0;
     font-size: 1.5rem;
 }
-
-.product-content p {
-    font-size: 0.95rem;
-    line-height: 1.4;
-    min-height: 50px;
-}
-
-.product-content strong {
-    display: block;
-    margin: 10px 0;
-    font-size: 1.2rem;
-    color: #4f46e5;
-}
-
+.product-content p { font-size: 0.95rem; line-height: 1.4; min-height: 50px; }
+.product-content strong { display: block; margin: 10px 0; font-size: 1.2rem; color: #4f46e5; }
 .product-content button {
     background: #4f46e5;
     border: none;
@@ -103,12 +46,9 @@ h1 {
     font-weight: bold;
     transition: background 0.3s;
 }
+.product-content button:hover { background: #2563eb; }
 
-.product-content button:hover {
-    background: #2563eb;
-}
-
-/* ===== MODALS ===== */
+/* ===== Modals ===== */
 .modal {
     display: none;
     position: fixed;
@@ -118,7 +58,6 @@ h1 {
     align-items: center;
     z-index: 999;
 }
-
 .modal-box {
     background: #111827;
     border-radius: 12px;
@@ -126,17 +65,8 @@ h1 {
     width: 90%;
     max-width: 400px;
 }
-
-.modal-box h2 {
-    margin-top: 0;
-    color: #4f46e5;
-    font-size: 1.8rem;
-}
-
-.modal-box p {
-    margin: 8px 0;
-}
-
+.modal-box h2 { margin-top: 0; color: #4f46e5; font-size: 1.8rem; }
+.modal-box p { margin: 8px 0; }
 .modal-box button {
     margin-top: 15px;
     width: 100%;
@@ -148,68 +78,98 @@ h1 {
     cursor: pointer;
     font-weight: bold;
 }
-
-.modal-box button:hover {
-    background: #2563eb;
-}
-
+.modal-box button:hover { background: #2563eb; }
 </style>
 </head>
 <body>
+<!-- Schneefall -->
+<div class="snowfall" id="snowfall"></div>
 
-<header>
-    <strong>MXDEV SHOP</strong>
-    <div class="cart" onclick="openCart()">🛒 Warenkorb (<span id="cartCount">0</span>)</div>
-</header>
+<!-- NAVIGATION / HEADER -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <img src="logo.png" alt="MXDEV Logo" class="logo-image">
+            <span>MXDEV</span>
+        </div>
+        <button class="burger-menu" id="burgerMenu" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
 
+<!-- Fullscreen Menu Overlay -->
+<div class="menu-overlay" id="menuOverlay">
+    <div class="menu-content">
+        <div class="menu-links">
+            <a href="index.html" class="menu-link"><span class="menu-number">01</span><span class="menu-text">Home</span></a>
+            <a href="leistungen.html" class="menu-link"><span class="menu-number">02</span><span class="menu-text">Leistungen</span></a>
+            <a href="projekte.html" class="menu-link"><span class="menu-number">03</span><span class="menu-text">Projekte</span></a>
+            <a href="about.html" class="menu-link"><span class="menu-number">04</span><span class="menu-text">Über mich</span></a>
+            <a href="kontakt.html" class="menu-link"><span class="menu-number">05</span><span class="menu-text">Kontakt</span></a>
+            <a href="shop.html" class="menu-link shop-highlight active-page"><span class="menu-number">06</span><span class="menu-text">Shop</span></a>
+        </div>
+        <div class="menu-footer">
+            <div class="social-links">
+                <a href="https://www.instagram.com/mxdev.eu/" target="_blank" class="social-link">IG</a>
+                <a href="https://www.reddit.com/r/MXDEV/" target="_blank" class="social-link">Reddit</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">MXDEV Shop</h1>
+        <p class="hero-subtitle">Futuristische Leistungen & Tools für Web, Minecraft, Software & Design</p>
+    </div>
+</section>
+
+<!-- SHOP GRID -->
 <div class="container">
-    <h1>Unsere Leistungen</h1>
     <div class="products">
         <div class="product">
-            <img src="website.jpg" alt="Website">
+            <img src="images/comic_website.png" alt="Website">
             <div class="product-content">
                 <h3>Website</h3>
-                <p>Professionelle, responsive Websites. Grundpreis: 15€, Vorauszahlung nötig.</p>
+                <p>Responsive Websites für Firmen. Grundpreis: 15€, Vorauszahlung nötig.</p>
                 <strong>60-220 €</strong>
                 <button onclick="addToCart('Website', 60)">In den Warenkorb</button>
             </div>
         </div>
-
         <div class="product">
-            <img src="plugin.jpg" alt="Minecraft Plugin">
+            <img src="images/comic_plugin.png" alt="Minecraft Plugin">
             <div class="product-content">
                 <h3>Minecraft Plugin</h3>
-                <p>Individuelle Plugins für deinen Server. Keine Vorauszahlung nötig.</p>
+                <p>Individuelle Plugins. Keine Vorauszahlung nötig.</p>
                 <strong>15-90 €</strong>
                 <button onclick="addToCart('Minecraft Plugin', 15)">In den Warenkorb</button>
             </div>
         </div>
-
         <div class="product">
-            <img src="logo.jpg" alt="Logo">
+            <img src="images/comic_logo.png" alt="Logo Design">
             <div class="product-content">
                 <h3>Logo Design</h3>
-                <p>Einzigartige Logos & Grafiken. Grundpreis: 15€, Vorauszahlung nötig.</p>
+                <p>Einzigartige Logos. Grundpreis: 15€, Vorauszahlung nötig.</p>
                 <strong>40-120 €</strong>
                 <button onclick="addToCart('Logo Design', 40)">In den Warenkorb</button>
             </div>
         </div>
-
         <div class="product">
-            <img src="software.jpg" alt="Software">
+            <img src="images/comic_software.png" alt="Software">
             <div class="product-content">
                 <h3>Softwareprogrammierung</h3>
-                <p>Individuelle Softwarelösungen. Grundpreis: 30€, Vorauszahlung nötig.</p>
+                <p>Individuelle Software. Grundpreis: 30€, Vorauszahlung nötig.</p>
                 <strong>80-300 €</strong>
                 <button onclick="addToCart('Softwareprogrammierung', 80)">In den Warenkorb</button>
             </div>
         </div>
-
         <div class="product">
-            <img src="database.jpg" alt="Datenbank">
+            <img src="images/comic_database.png" alt="Datenbank">
             <div class="product-content">
                 <h3>Datenbank-Verbindung</h3>
-                <p>Sichere Datenbank-Anbindungen. Grundpreis: 30€, keine Vorauszahlung nötig.</p>
+                <p>Professionelle Datenbankanbindung. Grundpreis: 30€, keine Vorauszahlung nötig.</p>
                 <strong>30 €</strong>
                 <button onclick="addToCart('Datenbank-Verbindung', 30)">In den Warenkorb</button>
             </div>
@@ -237,57 +197,43 @@ h1 {
     </div>
 </div>
 
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo"><img src="logo.png" alt="MXDEV Logo"><span>MXDEV</span></div>
+                <p>Futuristische Development Lösungen</p>
+            </div>
+            <div class="footer-right">
+                <a href="kontakt.html" class="footer-contact-btn">Kontakt aufnehmen</a>
+                <p>&copy; 2024 MXDEV. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
 <script>
 let cart = JSON.parse(localStorage.getItem("mxdev_cart")) || [];
-
-function addToCart(name, price) {
-    cart.push({ name, price });
-    saveCart();
-    openCart();
-}
-
-function saveCart() {
-    localStorage.setItem("mxdev_cart", JSON.stringify(cart));
-    document.getElementById("cartCount").innerText = cart.length;
-}
-
-function openCart() {
-    renderCart();
-    document.getElementById("cartModal").style.display = "flex";
-}
-
-function closeCart() {
-    document.getElementById("cartModal").style.display = "none";
-}
-
-function renderCart() {
-    const el = document.getElementById("cartItems");
-    el.innerHTML = "";
-    cart.forEach(item => {
-        el.innerHTML += `<p>${item.name} – ${item.price} €</p>`;
-    });
-}
-
-function openCheckout() {
-    closeCart();
-    const el = document.getElementById("checkoutItems");
-    el.innerHTML = "";
-    cart.forEach(item => {
-        el.innerHTML += `<p>${item.name} – ${item.price} €</p>`;
-    });
-    document.getElementById("checkoutModal").style.display = "flex";
-}
-
-function closeCheckout() {
-    document.getElementById("checkoutModal").style.display = "none";
-}
-
-function redirectToStripe() {
-    // 🔴 HIER STRIPE LINK EINTRAGEN
-    window.location.href = "https://checkout.stripe.com/YOUR_LINK_HERE";
-}
-
+function addToCart(name, price){ cart.push({name, price}); saveCart(); openCart(); }
+function saveCart(){ localStorage.setItem("mxdev_cart", JSON.stringify(cart)); document.getElementById("cartCount").innerText = cart.length; }
+function openCart(){ renderCart(); document.getElementById("cartModal").style.display = "flex"; }
+function closeCart(){ document.getElementById("cartModal").style.display = "none"; }
+function renderCart(){ const el = document.getElementById("cartItems"); el.innerHTML = ""; cart.forEach(item=>{el.innerHTML += `<p>${item.name} – ${item.price} €</p>`;}); }
+function openCheckout(){ closeCart(); const el = document.getElementById("checkoutItems"); el.innerHTML = ""; cart.forEach(item=>{el.innerHTML += `<p>${item.name} – ${item.price} €</p>`;}); document.getElementById("checkoutModal").style.display = "flex"; }
+function closeCheckout(){ document.getElementById("checkoutModal").style.display = "none"; }
+function redirectToStripe(){ window.location.href = "https://checkout.stripe.com/YOUR_LINK_HERE"; }
 saveCart();
+
+// SCHNEEFALL
+function createSnowflake(){ const snowfall=document.getElementById('snowfall'); const snowflake=document.createElement('div'); snowflake.className='snowflake'; snowflake.innerHTML='❄'; snowflake.style.left=Math.random()*100+'%'; snowflake.style.animationDuration=Math.random()*3+2+'s'; snowflake.style.opacity=Math.random(); snowflake.style.fontSize=Math.random()*10+10+'px'; snowfall.appendChild(snowflake); setTimeout(()=>{snowflake.remove();},5000);}
+setInterval(createSnowflake,200);
+
+// BURGER MENU
+const burgerMenu=document.getElementById('burgerMenu'); const menuOverlay=document.getElementById('menuOverlay'); let menuOpen=false;
+burgerMenu.addEventListener('click',()=>{ menuOpen=!menuOpen; if(menuOpen){ burgerMenu.classList.add('active'); menuOverlay.classList.add('active'); document.body.style.overflow='hidden'; } else { burgerMenu.classList.remove('active'); menuOverlay.classList.remove('active'); document.body.style.overflow=''; } });
+document.querySelectorAll('.menu-link').forEach(link=>{ link.addEventListener('click',()=>{ burgerMenu.classList.remove('active'); menuOverlay.classList.remove('active'); document.body.style.overflow=''; menuOpen=false; });});
 </script>
+
 </body>
 </html>
