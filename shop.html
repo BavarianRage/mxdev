@@ -2,194 +2,113 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>MXDEV Shop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: #e5e7eb;
-        }
-
-        header {
-            padding: 20px;
-            background: #020617;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .cart {
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .product {
-            background: #020617;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        button {
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 6px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        button:hover {
-            background: #1d4ed8;
-        }
-
-        /* MODALS */
-        .modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.7);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-box {
-            background: #020617;
-            padding: 20px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 400px;
-        }
-
-        .modal-box h2 {
-            margin-top: 0;
-        }
-    </style>
+    <title>Shop – MXDEV</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <strong>MXDEV SHOP</strong>
-    <div class="cart" onclick="openCart()">
-        🛒 Warenkorb (<span id="cartCount">0</span>)
+<div class="snowfall" id="snowfall"></div>
+
+<!-- NAV -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <img src="logo.png" class="logo-image">
+            <span>MXDEV</span>
+        </div>
+        <button class="burger-menu" id="burgerMenu"><span></span><span></span><span></span></button>
     </div>
-</header>
+</nav>
 
-<div class="container">
-    <h1>Unsere Services</h1>
+<!-- HEADER -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">MXDEV <span class="gradient-text">Shop</span></h1>
+        <p class="page-subtitle">
+            Transparente Preise · Maßgeschneiderte Lösungen · Faire Vorauszahlungen
+        </p>
+    </div>
+</section>
 
-    <div class="products">
-        <div class="product">
-            <h3>Website Basic</h3>
-            <p>Onepager für dein Projekt</p>
-            <strong>299 €</strong><br>
-            <button onclick="addToCart('Website Basic', 299)">In den Warenkorb</button>
-        </div>
+<!-- SHOP GRID -->
+<section class="services-content">
+<div class="container-wide">
 
-        <div class="product">
-            <h3>Website Pro</h3>
-            <p>Mehrseitige Website</p>
-            <strong>599 €</strong><br>
-            <button onclick="addToCart('Website Pro', 599)">In den Warenkorb</button>
-        </div>
-
-        <div class="product">
-            <h3>Beratung</h3>
-            <p>1h persönliche Beratung</p>
-            <strong>99 €</strong><br>
-            <button onclick="addToCart('Beratung', 99)">In den Warenkorb</button>
-        </div>
+<!-- ITEM -->
+<div class="service-block">
+    <div class="service-info">
+        <h2>🌐 Website / Webdesign</h2>
+        <p>
+            Moderne, responsive Websites – von Landing Pages bis zu vollständigen Unternehmensauftritten.
+        </p>
+        <ul class="price-list">
+            <li><strong>Preis:</strong> 60 € – 220 € (je nach Aufwand)</li>
+            <li><strong>Vorauszahlung:</strong> 15 € (verpflichtend)</li>
+        </ul>
+        <p class="price-note">
+            Die Vorauszahlung ist notwendig, da externe Software, Lizenzen und Entwicklungsressourcen eingesetzt werden.
+        </p>
+        <button class="btn btn-primary" onclick="addToCart('Website',15)">In den Warenkorb</button>
     </div>
 </div>
 
-<!-- 🛒 CART MODAL -->
-<div class="modal" id="cartModal">
-    <div class="modal-box">
-        <h2>Warenkorb</h2>
-        <div id="cartItems"></div>
-        <button onclick="openCheckout()">Zur Kasse</button>
-        <button onclick="closeCart()">Schließen</button>
+<div class="service-block reverse featured">
+    <div class="service-info">
+        <h2>⚡ Minecraft Plugin</h2>
+        <p>Individuelle Plugins für Spigot / Paper – optimiert & erweiterbar.</p>
+        <ul class="price-list">
+            <li><strong>Preis:</strong> 15 € – 90 €</li>
+            <li><strong>Vorauszahlung:</strong> keine</li>
+        </ul>
+        <button class="btn btn-primary" onclick="addToCart('Minecraft Plugin',0)">In den Warenkorb</button>
     </div>
 </div>
 
-<!-- 💳 CHECKOUT MODAL -->
-<div class="modal" id="checkoutModal">
-    <div class="modal-box">
-        <h2>Checkout</h2>
-        <div id="checkoutItems"></div>
-        <button onclick="redirectToStripe()">Mit Stripe bezahlen</button>
-        <button onclick="closeCheckout()">Abbrechen</button>
+<div class="service-block">
+    <div class="service-info">
+        <h2>🎨 Logo & Grafikdesign</h2>
+        <ul class="price-list">
+            <li><strong>Preis:</strong> 40 € – 120 €</li>
+            <li><strong>Vorauszahlung:</strong> 15 €</li>
+        </ul>
+        <p class="price-note">
+            Vorauszahlung deckt Designsoftware, Mockups & Konzeptphase ab.
+        </p>
+        <button class="btn btn-primary" onclick="addToCart('Logo Design',15)">In den Warenkorb</button>
     </div>
 </div>
 
-<!-- 🧠 SHOP LOGIK -->
-<script>
-let cart = JSON.parse(localStorage.getItem("mxdev_cart")) || [];
+<div class="service-block reverse">
+    <div class="service-info">
+        <h2>💻 Softwareprogrammierung</h2>
+        <ul class="price-list">
+            <li><strong>Preis:</strong> 80 € – 300 €</li>
+            <li><strong>Grundbetrag:</strong> 30 €</li>
+        </ul>
+        <p class="price-note">
+            Grundbetrag erforderlich für Planung, Architektur & Entwicklungsumgebung.
+        </p>
+        <button class="btn btn-primary" onclick="addToCart('Softwareprogrammierung',30)">In den Warenkorb</button>
+    </div>
+</div>
 
-function addToCart(name, price) {
-    cart.push({ name, price });
-    saveCart();
-    openCart();
-}
+<div class="service-block">
+    <div class="service-info">
+        <h2>🗄️ Datenbank-Verbindungen</h2>
+        <ul class="price-list">
+            <li><strong>Preis:</strong> ab 30 €</li>
+            <li><strong>Vorauszahlung:</strong> keine</li>
+        </ul>
+        <button class="btn btn-primary" onclick="addToCart('Datenbankverbindung',0)">In den Warenkorb</button>
+    </div>
+</div>
 
-function saveCart() {
-    localStorage.setItem("mxdev_cart", JSON.stringify(cart));
-    document.getElementById("cartCount").innerText = cart.length;
-}
+</div>
+</section>
 
-function openCart() {
-    renderCart();
-    document.getElementById("cartModal").style.display = "flex";
-}
-
-function closeCart() {
-    document.getElementById("cartModal").style.display = "none";
-}
-
-function renderCart() {
-    const el = document.getElementById("cartItems");
-    el.innerHTML = "";
-    cart.forEach(item => {
-        el.innerHTML += `<p>${item.name} – ${item.price} €</p>`;
-    });
-}
-
-function openCheckout() {
-    closeCart();
-    const el = document.getElementById("checkoutItems");
-    el.innerHTML = "";
-    cart.forEach(item => {
-        el.innerHTML += `<p>${item.name} – ${item.price} €</p>`;
-    });
-    document.getElementById("checkoutModal").style.display = "flex";
-}
-
-function closeCheckout() {
-    document.getElementById("checkoutModal").style.display = "none";
-}
-
-function redirectToStripe() {
-    // 🔴 HIER DEIN STRIPE CHECKOUT LINK
-    window.location.href = "https://checkout.stripe.com/YOUR_LINK_HERE";
-}
-
-saveCart();
-</script>
-
-</body>
-</html>
+<!-- CART BUTTON -->
+<div class="floating-cart" onclick="openCart()">
+    🛒 <span id="cartCount">0</span>
+</div>
