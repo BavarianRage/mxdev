@@ -244,6 +244,32 @@ body {
     background-clip: text;
 }
 
+/* Hero Motto */
+.hero-motto {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.motto-word {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+}
+
+.motto-dot {
+    color: var(--accent);
+    font-weight: 900;
+}
+
 .hero-subtitle {
     font-size: 1.5rem;
     color: var(--text-muted);
@@ -383,61 +409,6 @@ body {
 
 .output.success {
     color: #4caf50;
-}
-
-/* ===== SHOP BANNER ===== */
-.shop-banner {
-    background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(168, 85, 247, 0.1));
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 2rem 20px;
-    backdrop-filter: blur(10px);
-}
-
-.shop-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-}
-
-.shop-icon {
-    font-size: 3rem;
-}
-
-.shop-text h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.shop-text p {
-    color: var(--text-muted);
-}
-
-.shop-cta {
-    background: linear-gradient(135deg, var(--accent), var(--secondary));
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
 }
 
 /* ===== SERVICES SECTION ===== */
@@ -633,6 +604,40 @@ body {
 .footer-brand p {
     color: var(--text-muted);
     margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.social-link:hover {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-color: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 245, 255, 0.2);
+}
+
+.social-link svg {
+    width: 24px;
+    height: 24px;
 }
 
 .footer-column h4 {
@@ -665,6 +670,11 @@ body {
         font-size: 2.5rem;
     }
     
+    .hero-motto {
+        font-size: 1.2rem;
+        letter-spacing: 0.1em;
+    }
+    
     .hero-subtitle {
         font-size: 1.2rem;
     }
@@ -688,5 +698,9 @@ body {
     
     .cta-content h2 {
         font-size: 2rem;
+    }
+    
+    .social-links {
+        justify-content: center;
     }
 }
