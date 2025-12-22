@@ -1,114 +1,293 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop – MXDEV</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MXDEV Shop</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+/* ===== MXDEV-Futuristic-Style ===== */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #0b0f1a;
+    color: #e0e0e0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #020617;
+    border-bottom: 1px solid #1e293b;
+}
+
+header strong {
+    font-size: 1.5rem;
+}
+
+.cart {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg,#4f46e5,#2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 30px;
+}
+
+.product {
+    background: #111827;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.product-content {
+    padding: 20px;
+}
+
+.product-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+}
+
+.product-content p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    min-height: 50px;
+}
+
+.product-content strong {
+    display: block;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #4f46e5;
+}
+
+.product-content button {
+    background: #4f46e5;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.product-content button:hover {
+    background: #2563eb;
+}
+
+/* ===== MODALS ===== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-box {
+    background: #111827;
+    border-radius: 12px;
+    padding: 25px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-box h2 {
+    margin-top: 0;
+    color: #4f46e5;
+    font-size: 1.8rem;
+}
+
+.modal-box p {
+    margin: 8px 0;
+}
+
+.modal-box button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #4f46e5;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modal-box button:hover {
+    background: #2563eb;
+}
+
+</style>
 </head>
 <body>
 
-<div class="snowfall" id="snowfall"></div>
+<header>
+    <strong>MXDEV SHOP</strong>
+    <div class="cart" onclick="openCart()">🛒 Warenkorb (<span id="cartCount">0</span>)</div>
+</header>
 
-<!-- NAV -->
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="logo">
-            <img src="logo.png" class="logo-image">
-            <span>MXDEV</span>
+<div class="container">
+    <h1>Unsere Leistungen</h1>
+    <div class="products">
+        <div class="product">
+            <img src="website.jpg" alt="Website">
+            <div class="product-content">
+                <h3>Website</h3>
+                <p>Professionelle, responsive Websites. Grundpreis: 15€, Vorauszahlung nötig.</p>
+                <strong>60-220 €</strong>
+                <button onclick="addToCart('Website', 60)">In den Warenkorb</button>
+            </div>
         </div>
-        <button class="burger-menu" id="burgerMenu"><span></span><span></span><span></span></button>
-    </div>
-</nav>
 
-<!-- HEADER -->
-<section class="page-header">
-    <div class="container">
-        <h1 class="page-title">MXDEV <span class="gradient-text">Shop</span></h1>
-        <p class="page-subtitle">
-            Transparente Preise · Maßgeschneiderte Lösungen · Faire Vorauszahlungen
-        </p>
-    </div>
-</section>
+        <div class="product">
+            <img src="plugin.jpg" alt="Minecraft Plugin">
+            <div class="product-content">
+                <h3>Minecraft Plugin</h3>
+                <p>Individuelle Plugins für deinen Server. Keine Vorauszahlung nötig.</p>
+                <strong>15-90 €</strong>
+                <button onclick="addToCart('Minecraft Plugin', 15)">In den Warenkorb</button>
+            </div>
+        </div>
 
-<!-- SHOP GRID -->
-<section class="services-content">
-<div class="container-wide">
+        <div class="product">
+            <img src="logo.jpg" alt="Logo">
+            <div class="product-content">
+                <h3>Logo Design</h3>
+                <p>Einzigartige Logos & Grafiken. Grundpreis: 15€, Vorauszahlung nötig.</p>
+                <strong>40-120 €</strong>
+                <button onclick="addToCart('Logo Design', 40)">In den Warenkorb</button>
+            </div>
+        </div>
 
-<!-- ITEM -->
-<div class="service-block">
-    <div class="service-info">
-        <h2>🌐 Website / Webdesign</h2>
-        <p>
-            Moderne, responsive Websites – von Landing Pages bis zu vollständigen Unternehmensauftritten.
-        </p>
-        <ul class="price-list">
-            <li><strong>Preis:</strong> 60 € – 220 € (je nach Aufwand)</li>
-            <li><strong>Vorauszahlung:</strong> 15 € (verpflichtend)</li>
-        </ul>
-        <p class="price-note">
-            Die Vorauszahlung ist notwendig, da externe Software, Lizenzen und Entwicklungsressourcen eingesetzt werden.
-        </p>
-        <button class="btn btn-primary" onclick="addToCart('Website',15)">In den Warenkorb</button>
-    </div>
-</div>
+        <div class="product">
+            <img src="software.jpg" alt="Software">
+            <div class="product-content">
+                <h3>Softwareprogrammierung</h3>
+                <p>Individuelle Softwarelösungen. Grundpreis: 30€, Vorauszahlung nötig.</p>
+                <strong>80-300 €</strong>
+                <button onclick="addToCart('Softwareprogrammierung', 80)">In den Warenkorb</button>
+            </div>
+        </div>
 
-<div class="service-block reverse featured">
-    <div class="service-info">
-        <h2>⚡ Minecraft Plugin</h2>
-        <p>Individuelle Plugins für Spigot / Paper – optimiert & erweiterbar.</p>
-        <ul class="price-list">
-            <li><strong>Preis:</strong> 15 € – 90 €</li>
-            <li><strong>Vorauszahlung:</strong> keine</li>
-        </ul>
-        <button class="btn btn-primary" onclick="addToCart('Minecraft Plugin',0)">In den Warenkorb</button>
+        <div class="product">
+            <img src="database.jpg" alt="Datenbank">
+            <div class="product-content">
+                <h3>Datenbank-Verbindung</h3>
+                <p>Sichere Datenbank-Anbindungen. Grundpreis: 30€, keine Vorauszahlung nötig.</p>
+                <strong>30 €</strong>
+                <button onclick="addToCart('Datenbank-Verbindung', 30)">In den Warenkorb</button>
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="service-block">
-    <div class="service-info">
-        <h2>🎨 Logo & Grafikdesign</h2>
-        <ul class="price-list">
-            <li><strong>Preis:</strong> 40 € – 120 €</li>
-            <li><strong>Vorauszahlung:</strong> 15 €</li>
-        </ul>
-        <p class="price-note">
-            Vorauszahlung deckt Designsoftware, Mockups & Konzeptphase ab.
-        </p>
-        <button class="btn btn-primary" onclick="addToCart('Logo Design',15)">In den Warenkorb</button>
+<!-- CART MODAL -->
+<div class="modal" id="cartModal">
+    <div class="modal-box">
+        <h2>Warenkorb</h2>
+        <div id="cartItems"></div>
+        <button onclick="openCheckout()">Zur Kasse</button>
+        <button onclick="closeCart()">Schließen</button>
     </div>
 </div>
 
-<div class="service-block reverse">
-    <div class="service-info">
-        <h2>💻 Softwareprogrammierung</h2>
-        <ul class="price-list">
-            <li><strong>Preis:</strong> 80 € – 300 €</li>
-            <li><strong>Grundbetrag:</strong> 30 €</li>
-        </ul>
-        <p class="price-note">
-            Grundbetrag erforderlich für Planung, Architektur & Entwicklungsumgebung.
-        </p>
-        <button class="btn btn-primary" onclick="addToCart('Softwareprogrammierung',30)">In den Warenkorb</button>
+<!-- CHECKOUT MODAL -->
+<div class="modal" id="checkoutModal">
+    <div class="modal-box">
+        <h2>Checkout</h2>
+        <div id="checkoutItems"></div>
+        <button onclick="redirectToStripe()">Mit Stripe bezahlen</button>
+        <button onclick="closeCheckout()">Abbrechen</button>
     </div>
 </div>
 
-<div class="service-block">
-    <div class="service-info">
-        <h2>🗄️ Datenbank-Verbindungen</h2>
-        <ul class="price-list">
-            <li><strong>Preis:</strong> ab 30 €</li>
-            <li><strong>Vorauszahlung:</strong> keine</li>
-        </ul>
-        <button class="btn btn-primary" onclick="addToCart('Datenbankverbindung',0)">In den Warenkorb</button>
-    </div>
-</div>
+<script>
+let cart = JSON.parse(localStorage.getItem("mxdev_cart")) || [];
 
-</div>
-</section>
+function addToCart(name, price) {
+    cart.push({ name, price });
+    saveCart();
+    openCart();
+}
 
-<!-- CART BUTTON -->
-<div class="floating-cart" onclick="openCart()">
-    🛒 <span id="cartCount">0</span>
-</div>
+function saveCart() {
+    localStorage.setItem("mxdev_cart", JSON.stringify(cart));
+    document.getElementById("cartCount").innerText = cart.length;
+}
+
+function openCart() {
+    renderCart();
+    document.getElementById("cartModal").style.display = "flex";
+}
+
+function closeCart() {
+    document.getElementById("cartModal").style.display = "none";
+}
+
+function renderCart() {
+    const el = document.getElementById("cartItems");
+    el.innerHTML = "";
+    cart.forEach(item => {
+        el.innerHTML += `<p>${item.name} – ${item.price} €</p>`;
+    });
+}
+
+function openCheckout() {
+    closeCart();
+    const el = document.getElementById("checkoutItems");
+    el.innerHTML = "";
+    cart.forEach(item => {
+        el.innerHTML += `<p>${item.name} – ${item.price} €</p>`;
+    });
+    document.getElementById("checkoutModal").style.display = "flex";
+}
+
+function closeCheckout() {
+    document.getElementById("checkoutModal").style.display = "none";
+}
+
+function redirectToStripe() {
+    // 🔴 HIER STRIPE LINK EINTRAGEN
+    window.location.href = "https://checkout.stripe.com/YOUR_LINK_HERE";
+}
+
+saveCart();
+</script>
+</body>
+</html>
