@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt – MXDEV</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Schneefall -->
+    <div class="snowfall" id="snowfall"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="MXDEV Logo" class="logo-image">
+                <span>MXDEV</span>
+            </div>
+
+            <button class="burger-menu" id="burgerMenu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menu -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-content">
+            <div class="menu-links">
+                <a href="index.html" class="menu-link"><span class="menu-number">01</span><span class="menu-text">Home</span></a>
+                <a href="leistungen.html" class="menu-link"><span class="menu-number">02</span><span class="menu-text">Leistungen</span></a>
+                <a href="projekte.html" class="menu-link"><span class="menu-number">03</span><span class="menu-text">Projekte</span></a>
+                <a href="about.html" class="menu-link"><span class="menu-number">04</span><span class="menu-text">Über mich</span></a>
+                <a href="kontakt.html" class="menu-link active-page"><span class="menu-number">05</span><span class="menu-text">Kontakt</span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="hero">
+        <div class="hero-content">
+
+            <h1 class="hero-title">
+                Lass uns<br>
+                <span class="gradient-text">reden</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                support@mxdev.eu
+            </p>
+
+            <form class="terminal" id="contactForm">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="terminal-title">contact@mxdev</span>
+                </div>
+
+                <div class="terminal-body">
+
+                    <!-- Anliegen -->
+                    <label class="prompt">➜ Anliegen</label>
+                    <select id="anliegen" required>
+                        <option value="">Bitte auswählen</option>
+                        <option>Allgemeine Beratung</option>
+                        <option>Website / Webdesign</option>
+                        <option>Minecraft Server / Plugins</option>
+                        <option>Discord Bot</option>
+                        <option>Automatisierung / Systeme</option>
+                        <option>Sonstiges</option>
+                    </select>
+
+                    <!-- Name -->
+                    <label class="prompt">➜ Wie dürfen wir dich nennen?</label>
+                    <input type="text" id="name" placeholder="Dein Name oder Nickname" required>
+
+                    <!-- Nachricht -->
+                    <label class="prompt">➜ Deine Nachricht (min. 15 Wörter)</label>
+                    <textarea id="message" rows="5" placeholder="Beschreibe dein Anliegen möglichst genau..." required></textarea>
+
+                    <button type="submit" class="btn btn-primary" style="margin-top:20px;">
+                        Anfrage senden
+                    </button>
+
+                    <p id="errorMsg" style="color:#ff4d4d; display:none; margin-top:10px;">
+                        Bitte schreibe mindestens 15 Wörter.
+                    </p>
+
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="logo.png" class="logo-image">
+                        <span>MXDEV</span>
+                    </div>
+                    <p>Futuristische Development Lösungen</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Schneefall
+        function createSnowflake() {
+            const s = document.getElementById('snowfall');
+            const f = document.createElement('div');
+            f.className = 'snowflake';
+            f.innerHTML = '❄';
+            f.style.left = Math.random() * 100 + '%';
+            f.style.fontSize = Math.random() * 10 + 10 + 'px';
+            f.style.animationDuration = Math.random() * 3 + 2 + 's';
+            s.appendChild(f);
+            setTimeout(() => f.remove(), 5000);
+        }
+        setInterval(createSnowflake, 200);
+
+        // Burger
+        const burgerMenu = document.getElementById('burgerMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        burgerMenu.onclick = () => {
+            burgerMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.style.overflow = menuOverlay.classList.contains('active') ? 'hidden' : '';
+        };
+
+        // Formular Logik
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const msg = document.getElementById('message').value.trim();
+            const words = msg.split(/\s+/).length;
+
+            if (words < 15) {
+                document.getElementById('errorMsg').style.display = 'block';
+                return;
+            }
+
+            const anliegen = document.getElementById('anliegen').value;
+            const name = document.getElementById('name').value;
+
+            const subject = encodeURIComponent("Kontaktanfrage – " + anliegen);
+            const body = encodeURIComponent(
+                "Name: " + name + "\n\n" +
+                "Anliegen: " + anliegen + "\n\n" +
+                "Nachricht:\n" + msg
+            );
+
+            window.location.href = `mailto:support@mxdev.eu?subject=${subject}&body=${body}`;
+        });
+    </script>
+
+</body>
+</html>
