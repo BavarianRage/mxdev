@@ -101,6 +101,12 @@ body {
     font-size: 1.2rem;
 }
 
+.logo-image {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
 /* ===== BURGER MENU ===== */
 .burger-menu {
     width: 50px;
@@ -183,13 +189,40 @@ body {
     align-items: center;
     gap: 2rem;
     text-decoration: none;
-    color: var(--text);
+    color: #64748b;
     font-size: 4rem;
     font-weight: 800;
     position: relative;
     transition: all 0.3s;
     opacity: 0;
     transform: translateY(30px);
+}
+
+.menu-link.active-page {
+    color: var(--text);
+}
+
+.menu-link.active-page .menu-text {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow-pulse 2s ease-in-out infinite;
+    text-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
+}
+
+.menu-link.active-page .menu-number {
+    color: var(--primary);
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        filter: brightness(1);
+        transform: scale(1);
+    }
+    50% {
+        filter: brightness(1.3);
+        transform: scale(1.05);
+    }
 }
 
 .menu-overlay.active .menu-link {
@@ -220,11 +253,15 @@ body {
     transition: all 0.3s;
 }
 
-.menu-link:hover .menu-text {
+.menu-link:not(.active-page):hover .menu-text {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transform: translateX(20px);
+}
+
+.menu-link:not(.active-page):hover {
+    color: var(--text);
 }
 
 .menu-link.shop-highlight .menu-text {
