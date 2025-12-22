@@ -7,78 +7,30 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="stylesheet" href="style.css">
 <style>
-/* ===== Shop-spezifisches Styling ===== */
-.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-    gap: 30px;
-    margin: 40px 20px;
-}
-.product {
-    background: #111827;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s;
-}
-.product:hover { transform: translateY(-5px); }
-.product img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-.product-content {
-    padding: 20px;
-}
-.product-content h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.5rem;
-}
-.product-content p { font-size: 0.95rem; line-height: 1.4; min-height: 50px; }
-.product-content strong { display: block; margin: 10px 0; font-size: 1.2rem; color: #4f46e5; }
-.product-content button {
-    background: #4f46e5;
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-.product-content button:hover { background: #2563eb; }
-
-/* ===== Modals ===== */
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.8);
-    justify-content: center;
+/* ===== Shop Aufbau Style ===== */
+.shop-placeholder {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    z-index: 999;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+    color: #fff;
+    padding: 60px 20px;
 }
-.modal-box {
-    background: #111827;
-    border-radius: 12px;
-    padding: 25px;
-    width: 90%;
-    max-width: 400px;
+.shop-placeholder h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #4f46e5, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
 }
-.modal-box h2 { margin-top: 0; color: #4f46e5; font-size: 1.8rem; }
-.modal-box p { margin: 8px 0; }
-.modal-box button {
-    margin-top: 15px;
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-    background: #4f46e5;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
+.shop-placeholder p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    line-height: 1.6;
+    color: #cbd5e1;
 }
-.modal-box button:hover { background: #2563eb; }
 </style>
 </head>
 <body>
@@ -118,84 +70,11 @@
     </div>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-content">
-        <h1 class="hero-title">MXDEV Shop</h1>
-        <p class="hero-subtitle">Futuristische Leistungen & Tools für Web, Minecraft, Software & Design</p>
-    </div>
+<!-- SHOP-PLATZHALTER -->
+<section class="shop-placeholder">
+    <h1>Shop wird aufgebaut 🚧</h1>
+    <p>Hey! Unser Shop ist noch in Arbeit. Bald kannst du hier unsere Services, Plugins, Designs und Software direkt kaufen. Bleib dran!</p>
 </section>
-
-<!-- SHOP GRID -->
-<div class="container">
-    <div class="products">
-        <div class="product">
-            <img src="images/comic_website.png" alt="Website">
-            <div class="product-content">
-                <h3>Website</h3>
-                <p>Responsive Websites für Firmen. Grundpreis: 15€, Vorauszahlung nötig.</p>
-                <strong>60-220 €</strong>
-                <button onclick="addToCart('Website', 60)">In den Warenkorb</button>
-            </div>
-        </div>
-        <div class="product">
-            <img src="images/comic_plugin.png" alt="Minecraft Plugin">
-            <div class="product-content">
-                <h3>Minecraft Plugin</h3>
-                <p>Individuelle Plugins. Keine Vorauszahlung nötig.</p>
-                <strong>15-90 €</strong>
-                <button onclick="addToCart('Minecraft Plugin', 15)">In den Warenkorb</button>
-            </div>
-        </div>
-        <div class="product">
-            <img src="images/comic_logo.png" alt="Logo Design">
-            <div class="product-content">
-                <h3>Logo Design</h3>
-                <p>Einzigartige Logos. Grundpreis: 15€, Vorauszahlung nötig.</p>
-                <strong>40-120 €</strong>
-                <button onclick="addToCart('Logo Design', 40)">In den Warenkorb</button>
-            </div>
-        </div>
-        <div class="product">
-            <img src="images/comic_software.png" alt="Software">
-            <div class="product-content">
-                <h3>Softwareprogrammierung</h3>
-                <p>Individuelle Software. Grundpreis: 30€, Vorauszahlung nötig.</p>
-                <strong>80-300 €</strong>
-                <button onclick="addToCart('Softwareprogrammierung', 80)">In den Warenkorb</button>
-            </div>
-        </div>
-        <div class="product">
-            <img src="images/comic_database.png" alt="Datenbank">
-            <div class="product-content">
-                <h3>Datenbank-Verbindung</h3>
-                <p>Professionelle Datenbankanbindung. Grundpreis: 30€, keine Vorauszahlung nötig.</p>
-                <strong>30 €</strong>
-                <button onclick="addToCart('Datenbank-Verbindung', 30)">In den Warenkorb</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- CART MODAL -->
-<div class="modal" id="cartModal">
-    <div class="modal-box">
-        <h2>Warenkorb</h2>
-        <div id="cartItems"></div>
-        <button onclick="openCheckout()">Zur Kasse</button>
-        <button onclick="closeCart()">Schließen</button>
-    </div>
-</div>
-
-<!-- CHECKOUT MODAL -->
-<div class="modal" id="checkoutModal">
-    <div class="modal-box">
-        <h2>Checkout</h2>
-        <div id="checkoutItems"></div>
-        <button onclick="redirectToStripe()">Mit Stripe bezahlen</button>
-        <button onclick="closeCheckout()">Abbrechen</button>
-    </div>
-</div>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -214,26 +93,45 @@
 </footer>
 
 <script>
-let cart = JSON.parse(localStorage.getItem("mxdev_cart")) || [];
-function addToCart(name, price){ cart.push({name, price}); saveCart(); openCart(); }
-function saveCart(){ localStorage.setItem("mxdev_cart", JSON.stringify(cart)); document.getElementById("cartCount").innerText = cart.length; }
-function openCart(){ renderCart(); document.getElementById("cartModal").style.display = "flex"; }
-function closeCart(){ document.getElementById("cartModal").style.display = "none"; }
-function renderCart(){ const el = document.getElementById("cartItems"); el.innerHTML = ""; cart.forEach(item=>{el.innerHTML += `<p>${item.name} – ${item.price} €</p>`;}); }
-function openCheckout(){ closeCart(); const el = document.getElementById("checkoutItems"); el.innerHTML = ""; cart.forEach(item=>{el.innerHTML += `<p>${item.name} – ${item.price} €</p>`;}); document.getElementById("checkoutModal").style.display = "flex"; }
-function closeCheckout(){ document.getElementById("checkoutModal").style.display = "none"; }
-function redirectToStripe(){ window.location.href = "https://checkout.stripe.com/YOUR_LINK_HERE"; }
-saveCart();
-
 // SCHNEEFALL
-function createSnowflake(){ const snowfall=document.getElementById('snowfall'); const snowflake=document.createElement('div'); snowflake.className='snowflake'; snowflake.innerHTML='❄'; snowflake.style.left=Math.random()*100+'%'; snowflake.style.animationDuration=Math.random()*3+2+'s'; snowflake.style.opacity=Math.random(); snowflake.style.fontSize=Math.random()*10+10+'px'; snowfall.appendChild(snowflake); setTimeout(()=>{snowflake.remove();},5000);}
+function createSnowflake(){ 
+    const snowfall=document.getElementById('snowfall'); 
+    const snowflake=document.createElement('div'); 
+    snowflake.className='snowflake'; 
+    snowflake.innerHTML='❄'; 
+    snowflake.style.left=Math.random()*100+'%'; 
+    snowflake.style.animationDuration=Math.random()*3+2+'s'; 
+    snowflake.style.opacity=Math.random(); 
+    snowflake.style.fontSize=Math.random()*10+10+'px'; 
+    snowfall.appendChild(snowflake); 
+    setTimeout(()=>{snowflake.remove();},5000);
+}
 setInterval(createSnowflake,200);
 
-// BURGER MENU
-const burgerMenu=document.getElementById('burgerMenu'); const menuOverlay=document.getElementById('menuOverlay'); let menuOpen=false;
-burgerMenu.addEventListener('click',()=>{ menuOpen=!menuOpen; if(menuOpen){ burgerMenu.classList.add('active'); menuOverlay.classList.add('active'); document.body.style.overflow='hidden'; } else { burgerMenu.classList.remove('active'); menuOverlay.classList.remove('active'); document.body.style.overflow=''; } });
-document.querySelectorAll('.menu-link').forEach(link=>{ link.addEventListener('click',()=>{ burgerMenu.classList.remove('active'); menuOverlay.classList.remove('active'); document.body.style.overflow=''; menuOpen=false; });});
+// BURGER MENU RECHTS OBEN
+const burgerMenu=document.getElementById('burgerMenu'); 
+const menuOverlay=document.getElementById('menuOverlay'); 
+let menuOpen=false;
+burgerMenu.addEventListener('click',()=>{
+    menuOpen=!menuOpen; 
+    if(menuOpen){ 
+        burgerMenu.classList.add('active'); 
+        menuOverlay.classList.add('active'); 
+        document.body.style.overflow='hidden'; 
+    } else { 
+        burgerMenu.classList.remove('active'); 
+        menuOverlay.classList.remove('active'); 
+        document.body.style.overflow=''; 
+    } 
+});
+document.querySelectorAll('.menu-link').forEach(link=>{
+    link.addEventListener('click',()=>{
+        burgerMenu.classList.remove('active'); 
+        menuOverlay.classList.remove('active'); 
+        document.body.style.overflow=''; 
+        menuOpen=false; 
+    });
+});
 </script>
-
 </body>
 </html>
