@@ -2961,4 +2961,159 @@ body {
     inset: 0;
     background: linear-gradient(90deg, rgba(244,63,94,0.2), transparent);
 }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #282c34;
+    padding: 1em;
+    color: white;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.burger-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.page-header {
+    text-align: center;
+    padding: 2em 0;
+    background-color: #61dafb;
+}
+
+.services-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2em;
+}
+
+.service-block {
+    background-color: white;
+    border: 2px solid #61dafb;
+    border-radius: 10px;
+    width: 300px;
+    margin: 1em;
+    padding: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.service-block:hover {
+    transform: scale(1.05);
+}
+
+.service-icon-mega {
+    font-size: 50px;
+}
+
+.service-heading {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+}
+
+.price-info {
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+.add-to-cart {
+    background-color: #61dafb;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #21a1f1;
+}
+
+.cart {
+    position: fixed;
+    top: 20%;
+    right: 5%;
+    background-color: white;
+    border: 2px solid #61dafb;
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.cart h2 {
+    margin: 0 0 1em;
+}
+
+#cart-items {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#checkout, #close-cart {
+    background-color: #61dafb;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1em;
+    transition: background-color 0.3s;
+}
+
+#checkout:hover, #close-cart:hover {
+    background-color: #21a1f1;
+}
+
+.footer {
+    background-color: #282c34;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-contact-btn {
+    background-color: #61dafb;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.footer-contact-btn:hover {
+    background-color: #21a1f1;
+}
 
