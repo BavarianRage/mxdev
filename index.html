@@ -1,315 +1,299 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>MXDEV – Websites, Webdesign & Minecraft Development</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <meta name="description" content="MXDEV entwickelt moderne Websites nach Wunsch, Minecraft-Plugins, Discord-Bots und automatisierte Systeme. Professionelles Webdesign, saubere Entwicklung und klare Kommunikation – von der Idee bis zum fertigen Projekt.">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
-  <!-- SEO Basics -->
-  <link rel="canonical" href="https://mxdev.eu/">
-  <meta name="robots" content="index,follow">
-
-  <!-- Open Graph / Social Preview -->
-  <meta property="og:title" content="MXDEV – Websites, Webdesign & Minecraft Development">
-  <meta property="og:description" content="Moderne Websites, individuelle Entwicklung, Minecraft-Plugins und Discord-Bots. MXDEV baut dir genau die Lösung, die du brauchst.">
-  <meta property="og:url" content="https://mxdev.eu/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="MXDEV">
-  <meta property="og:image" content="https://mxdev.eu/images/mxdev-preview.png">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MXDEV – Websites, Webdesign & Minecraft Development">
-  <meta name="twitter:description" content="Moderne Websites, individuelle Entwicklung, Minecraft-Plugins und Discord-Bots.">
-  <meta name="twitter:image" content="https://mxdev.eu/images/mxdev-preview.png">
-
-  <!-- Structured Data / Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "MXDEV",
-    "url": "https://mxdev.eu/",
-    "description": "MXDEV entwickelt moderne Websites, Minecraft-Plugins, Discord-Bots und digitale Tools.",
-    "email": "support@mxdev.eu",
-    "logo": "https://mxdev.eu/images/mxdev-preview.png"
-  }
-  </script>
-
-  <!-- Language Switcher Style (Flaggen-Version) -->
-  <style>
-    .language-switcher {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-left: 1rem;
-    }
-
-    .language-switcher button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1.4rem;
-      opacity: 0.5;
-      transition: 0.2s ease;
-    }
-
-    .language-switcher button.active {
-      opacity: 1;
-      transform: scale(1.15);
-    }
-
-    .language-switcher button:hover {
-      opacity: 0.9;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MXDEV - Futuristische Development Lösungen</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- Animated background layers -->
-  <div class="bg-gradients"></div>
-  <div class="bg-grid"></div>
-  <div class="bg-orbs">
-    <span></span><span></span><span></span>
-  </div>
-
-  <header class="navbar">
-    <div class="nav-logo">
-      <span class="logo-mark">M</span>
-      <span class="logo-text">MXDEV</span>
-    </div>
-
-    <nav class="nav-links">
-      <a href="index.html" class="nav-link active" data-i18n data-i18n-de="Home" data-i18n-en="Home">Home</a>
-      <a href="projekte.html" class="nav-link" data-i18n data-i18n-de="Projekte" data-i18n-en="Projects">Projekte</a>
-      <!-- NEU: Shop -->
-      <a href="shop.html" class="nav-link" data-i18n data-i18n-de="Shop" data-i18n-en="Shop">Shop</a>
-      <a href="kontakt.html" class="nav-link" data-i18n data-i18n-de="Kontakt" data-i18n-en="Contact">Kontakt</a>
-      <a href="discord.html" class="nav-link nav-pill" data-i18n data-i18n-de="Discord-Server" data-i18n-en="Discord server">Discord-Server</a>
+    <!-- Schneefall Animation -->
+    <div class="snowfall" id="snowfall"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">M</div>
+                <span>MXDEV</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#leistungen" class="nav-link">Leistungen</a>
+                <a href="#projekte" class="nav-link">Projekte</a>
+                <a href="#about" class="nav-link">Über mich</a>
+                <a href="#kontakt" class="nav-link">Kontakt</a>
+                <a href="#shop" class="nav-link shop-btn">Shop</a>
+            </div>
+        </div>
     </nav>
 
-    <!-- FLAGGEN SWITCHER -->
-    <div class="language-switcher">
-      <button data-lang="de" class="active">🇩🇪</button>
-      <button data-lang="en">🇬🇧</button>
-    </div>
-  </header>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="lights-container">
+                <div class="christmas-lights">
+                    <div class="light red"></div>
+                    <div class="light yellow"></div>
+                    <div class="light blue"></div>
+                    <div class="light green"></div>
+                    <div class="light red"></div>
+                    <div class="light yellow"></div>
+                    <div class="light blue"></div>
+                    <div class="light green"></div>
+                </div>
+            </div>
+            
+            <h1 class="hero-title">
+                Ich bin Max,<br>
+                der Typ hinter <span class="gradient-text">MXDEV</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Fullstack Developer • System Engineer • Discord Bot Specialist
+            </p>
+            
+            <div class="hero-description">
+                <p>Ich entwickle <strong>Websites</strong>, <strong>Minecraft-Server & Plugins</strong>, <strong>Discord-Bots</strong> und <strong>automatisierte Systeme</strong>, die nicht nur funktionieren, sondern auch nach Next Level aussehen.</p>
+            </div>
 
-  <main class="main">
+            <div class="hero-badges">
+                <span class="badge">Fullstack Dev</span>
+                <span class="badge">Minecraft Plugins</span>
+                <span class="badge">Discord Bots</span>
+                <span class="badge">Automatisierung</span>
+            </div>
 
-    <!-- NEWS BANNER -->
-    <section class="news-banner">
-      <div class="news-inner">
-        <span class="news-title" data-i18n
-              data-i18n-de="🚀 Neues Plugin im MXDEV Shop!"
-              data-i18n-en="🚀 New plugin in the MXDEV shop!">
-          🚀 Neues Plugin im MXDEV Shop!
-        </span>
+            <div class="hero-buttons">
+                <a href="#projekte" class="btn btn-primary">
+                    <span>Projekte ansehen</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <a href="#kontakt" class="btn btn-secondary">Mit mir arbeiten</a>
+            </div>
 
-        <p class="news-text" data-i18n
-           data-i18n-de="Das brandneue <strong>BanSystem X</strong> ist ab sofort verfügbar – mit GUI-Bans, Reports, History-System, Anti-Leak &amp; mehr."
-           data-i18n-en="The brand new <strong>BanSystem X</strong> is now available – with GUI bans, reports, history system, anti-leak &amp; more.">
-          Das brandneue <strong>BanSystem X</strong> ist ab sofort verfügbar – mit GUI-Bans, Reports, History-System, Anti-Leak & mehr.
-        </p>
-
-        <a href="Bansystem.html" class="btn-news" data-i18n
-           data-i18n-de="🔥 Jetzt ansehen – es ist endlich da! 🔥"
-           data-i18n-en="🔥 Check it out – it's finally here! 🔥">
-          🔥 Jetzt ansehen – es ist endlich da! 🔥
-        </a>
-      </div>
+            <!-- Terminal Preview -->
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="terminal-title">mxdev@terminal</span>
+                </div>
+                <div class="terminal-body">
+                    <p><span class="prompt">➜</span> whoami</p>
+                    <p><span class="output">mxdev + fullstack dev & plugin engineer</span></p>
+                    <p><span class="prompt">➜</span> skills</p>
+                    <p><span class="output">minecraft-plugins, web-dev, apis, automatisierung, discord</span></p>
+                    <p><span class="prompt">➜</span> status</p>
+                    <p><span class="output success">✓ Bereit für Projekte verfügbar_</span></p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-left">
-        <p class="eyebrow" data-i18n data-i18n-de="Futuristisches Development • MXDEV" data-i18n-en="Futuristic development • MXDEV">
-          Futuristisches Development • MXDEV
-        </p>
-
-        <h1>
-          <span class="headline-main" data-i18n data-i18n-de="Ich bin Max," data-i18n-en="I'm Max,">Ich bin Max,</span>
-          <span class="headline-accent" data-i18n data-i18n-de="der Typ hinter <span>MXDEV</span>." data-i18n-en="the guy behind <span>MXDEV</span>.">
-            der Typ hinter <span>MXDEV</span>.
-          </span>
-        </h1>
-
-        <p class="hero-text" data-i18n
-           data-i18n-de="Ich baue <strong>Websites</strong>, <strong>Minecraft-Server &amp; Plugins</strong>, <strong>Discord-Bots</strong> und <strong>automatisierte Systeme</strong>, die nicht nur funktionieren, sondern sich auch nach <span class='glitch-word'>Future</span> anfühlen."
-           data-i18n-en="I build <strong>websites</strong>, <strong>Minecraft servers &amp; plugins</strong>, <strong>Discord bots</strong> and <strong>automated systems</strong> that not only work, but feel like <span class='glitch-word'>future</span>.">
-          Ich baue <strong>Websites</strong>, <strong>Minecraft-Server & Plugins</strong>, <strong>Discord-Bots</strong> und <strong>automatisierte Systeme</strong>, die sich nach <span class="glitch-word">Future</span> anfühlen.
-        </p>
-
-        <div class="hero-tags">
-          <span class="tag" data-i18n data-i18n-de="Fullstack Dev" data-i18n-en="Fullstack dev">Fullstack Dev</span>
-          <span class="tag" data-i18n data-i18n-de="Minecraft Plugins" data-i18n-en="Minecraft plugins">Minecraft Plugins</span>
-          <span class="tag" data-i18n data-i18n-de="Discord Bots" data-i18n-en="Discord bots">Discord Bots</span>
-          <span class="tag" data-i18n data-i18n-de="Automatisierung" data-i18n-en="Automation">Automatisierung</span>
+    <!-- Shop Banner -->
+    <section class="shop-banner">
+        <div class="shop-content">
+            <div class="shop-icon">🚀</div>
+            <div class="shop-text">
+                <h3>Neues Plugin im MXDEV Shop!</h3>
+                <p>Das brandneue <strong>BanSystem X</strong> ist ab sofort verfügbar – mit GUI-Bans, Reports, History-System, Anti-Leak & mehr.</p>
+            </div>
+            <a href="#shop" class="shop-cta">
+                <span>🔥 Jetzt ansehen - es ist endlich da! 🔥</span>
+            </a>
         </div>
-
-        <div class="hero-cta">
-          <a href="projekte.html" class="btn primary" data-i18n data-i18n-de="Projekte ansehen" data-i18n-en="View projects">Projekte ansehen</a>
-          <a href="kontakt.html" class="btn ghost" data-i18n data-i18n-de="Mit mir arbeiten" data-i18n-en="Work with me">Mit mir arbeiten</a>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <!-- Terminal -->
-        <div class="console-card">
-          <div class="console-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-            <span class="console-title">mxdev@terminal</span>
-          </div>
-
-          <div class="console-body">
-            <div class="console-line">
-              <span class="prompt">➜</span> <span class="cmd">whoami</span>
-            </div>
-            <div class="console-line">
-              <span class="result" data-i18n data-i18n-de="max@mxdev • fullstack dev &amp; plugin engineer" data-i18n-en="max@mxdev • fullstack dev &amp; plugin engineer">
-                max@mxdev • fullstack dev & plugin engineer
-              </span>
-            </div>
-
-            <div class="console-line mt">
-              <span class="prompt">➜</span> <span class="cmd">skills</span>
-            </div>
-            <div class="console-line">
-              <span class="result" data-i18n data-i18n-de="minecraft-plugins, web-dev, apis, automatisierung, discord-bots" data-i18n-en="minecraft-plugins, web-dev, apis, automation, discord-bots">
-                minecraft-plugins, web-dev, apis, automation, discord-bots
-              </span>
-            </div>
-
-            <div class="console-line mt">
-              <span class="prompt">➜</span> <span class="cmd">status</span>
-            </div>
-            <div class="console-line">
-              <span class="result status-pulse" data-i18n data-i18n-de="für Projekte verfügbar_" data-i18n-en="available for projects_">
-                available for projects_
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Floating Card -->
-        <div class="hero-floating-card">
-          <p class="floating-label" data-i18n data-i18n-de="Was ich mache" data-i18n-en="What I do">Was ich mache</p>
-          <ul>
-            <li data-i18n data-i18n-de="<span>⚙️</span> Individuelle Minecraft-Netzwerke &amp; Friend-Systeme" data-i18n-en="<span>⚙️</span> Custom Minecraft networks &amp; friend systems">
-              <span>⚙️</span> Individuelle Minecraft-Netzwerke & Friend-Systeme
-            </li>
-            <li data-i18n data-i18n-de="<span>🕸</span> Moderne, responsive Web-Auftritte" data-i18n-en="<span>🕸</span> Modern, responsive web presences">
-              <span>🕸</span> Moderne, responsive Web-Auftritte
-            </li>
-            <li data-i18n data-i18n-de="<span>🤖</span> Discord-Bots &amp; Automatisierungen" data-i18n-en="<span>🤖</span> Discord bots &amp; automations">
-              <span>🤖</span> Discord-Bots & Automatisierungen
-            </li>
-            <li data-i18n data-i18n-de="<span>🚀</span> Ideen von 'Bro, wäre sick' zu 'Live online' bringen" data-i18n-en="<span>🚀</span> Turning 'bro, that'd be sick' ideas into 'live online' projects">
-              <span>🚀</span> Ideen von "Bro, wäre sick" zu "Live online" bringen
-            </li>
-          </ul>
-        </div>
-      </div>
     </section>
 
-    <!-- SECTION -->
-    <section class="section highlight">
-      <div class="section-inner">
-        <h2 data-i18n data-i18n-de="Wer ich bin &amp; was ich mache" data-i18n-en="Who I am &amp; what I do">
-          Wer ich bin & was ich mache
-        </h2>
+    <!-- Leistungen Section -->
+    <section class="services" id="leistungen">
+        <div class="container">
+            <h2 class="section-title">Was ich mache</h2>
+            <p class="section-subtitle">Moderne Lösungen für deine digitalen Projekte</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Minecraft Development</h3>
+                    <p>Individuelle Minecraft-Netzwerke & Friend-Systeme, moderne responsive Web-Auftritte für Server und Plugins, die deine Community begeistern.</p>
+                    <ul class="service-features">
+                        <li>Custom Plugins & Systeme</li>
+                        <li>Netzwerk-Setup & Konfiguration</li>
+                        <li>Performance-Optimierung</li>
+                    </ul>
+                </div>
 
-        <p data-i18n
-           data-i18n-de="Ich bin Max – Entwickler, der zu viel Kaffee, zu viel Code und zu viele Ideen auf einmal hat. Unter dem Namen <strong>MXDEV</strong> baue ich Dinge, die nach <em>Next Level</em> aussehen:"
-           data-i18n-en="I'm Max – a developer with too much coffee, too much code and too many ideas at once. Under the name <strong>MXDEV</strong> I build things that look <em>next level</em>:">
-          Ich bin Max – Entwickler, der zu viel Kaffee, zu viel Code und zu viele Ideen hat.
-        </p>
+                <div class="service-card featured">
+                    <div class="featured-badge">Beliebt</div>
+                    <div class="service-icon">🌐</div>
+                    <h3>Web & Branding</h3>
+                    <p>Moderne, responsive Web-Auftritte, Discord-Bots & Automatisierungen, die deine Projekte auf das nächste Level bringen.</p>
+                    <ul class="service-features">
+                        <li>Responsive Websites</li>
+                        <li>Custom Discord Bots</li>
+                        <li>API-Integrationen</li>
+                    </ul>
+                </div>
 
-        <div class="card-grid">
-          <article class="info-card">
-            <h3 data-i18n data-i18n-de="🕹 Minecraft Development" data-i18n-en="🕹 Minecraft development">🕹 Minecraft Development</h3>
-            <p data-i18n data-i18n-de="Eigene Netzwerke, Systeme wie Friend-Plugins, Lobby-Features, Anti-NPC-Lösungen &amp; mehr. Sauberer Code, performance-orientiert." data-i18n-en="Own networks, systems like friend plugins, lobby features, anti-NPC solutions &amp; more. Clean, performance-oriented code.">
-              Eigene Netzwerke, Systeme wie Friend-Plugins, Lobby-Features & Anti-NPC Systeme.
-            </p>
-          </article>
-
-          <article class="info-card">
-            <h3 data-i18n data-i18n-de="🌐 Web &amp; Branding" data-i18n-en="🌐 Web &amp; branding">🌐 Web & Branding</h3>
-            <p data-i18n data-i18n-de="Futuristische Landingpages, kleine Shops und Markenauftritte, die aussehen, als würden sie aus der Zukunft streamen." data-i18n-en="Futuristic landing pages, small shops and brand presences that look like they're streaming in from the future.">
-              Moderne Landingpages, Shops & futuristische Web-Experiences.
-            </p>
-          </article>
-
-          <article class="info-card">
-            <h3 data-i18n data-i18n-de="🤖 Automation &amp; Discord" data-i18n-en="🤖 Automation &amp; Discord">🤖 Automation & Discord</h3>
-            <p data-i18n data-i18n-de="Bots, Tools und Automationen, die deinen Alltag oder deine Community einfach smoother machen." data-i18n-en="Bots, tools and automations that make your everyday life or your community simply smoother.">
-              Discord-Bots, Systeme & Automatisierungen für smootheren Alltag.
-            </p>
-          </article>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>Automation & Discord</h3>
+                    <p>Automatisierte Systeme, Discord-Bots und intelligente Workflows, die dir Zeit sparen und deine Community verwalten.</p>
+                    <ul class="service-features">
+                        <li>Discord Bot Development</li>
+                        <li>Automatisierte Workflows</li>
+                        <li>System-Integration</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
-        <p class="section-footer" data-i18n
-           data-i18n-de="Wenn du Bock auf was Eigenes hast – <a href='kontakt.html'>schreib mir</a>. Ich mag Projekte, die ein bisschen verrückt sind."
-           data-i18n-en="If you want something of your own – <a href='kontakt.html'>hit me up</a>. I like projects that are a little crazy.">
-          Wenn du Bock auf was Eigenes hast – <a href="kontakt.html">schreib mir</a>.
-        </p>
-      </div>
     </section>
-  </main>
 
-  <footer class="footer">
-    <div class="footer-left">
-      <span data-i18n data-i18n-de="© <span class='year-placeholder'></span> MXDEV • Erstellt von Max" data-i18n-en="© <span class='year-placeholder'></span> MXDEV • Built by Max">
-        © <span class="year-placeholder"></span> MXDEV • Built by Max
-      </span>
-    </div>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projekte</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Zufriedenheit</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Jahre Erfahrung</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="footer-right">
-      <a href="discord.html" data-i18n data-i18n-de="Discord-Server" data-i18n-en="Discord server">Discord-Server</a>
-      <a href="kontakt.html" data-i18n data-i18n-de="Kontakt" data-i18n-en="Contact">Kontakt</a>
-      <!-- NEU: Impressum -->
-      <a href="impressum.html" data-i18n data-i18n-de="Impressum" data-i18n-en="Imprint">Impressum</a>
-    </div>
-  </footer>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Wer ich bin & was ich mache</h2>
+            <div class="about-content">
+                <p>Ich bin Max – Entwickler, der zu viel Kaffee, zu viel Code und zu viele Ideen auf einmal hat. Unter dem Namen <strong>MXDEV</strong> baue ich Dinge, die nach <span class="highlight">Next Level</span> aussehen.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Language Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const switcherButtons = document.querySelectorAll(".language-switcher button");
-      const currentYear = new Date().getFullYear();
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Bereit für dein nächstes Projekt?</h2>
+                <p>Lass uns gemeinsam etwas Großartiges erschaffen</p>
+                <div class="cta-buttons">
+                    <a href="#kontakt" class="btn btn-primary btn-large">Jetzt Kontakt aufnehmen</a>
+                    <a href="#" class="btn btn-secondary btn-large">Discord Server</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      function updateYear() {
-        document.querySelectorAll(".year-placeholder").forEach(el => el.textContent = currentYear);
-      }
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">M</div>
+                        <span>MXDEV</span>
+                    </div>
+                    <p>Futuristische Development Lösungen</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <a href="#home">Home</a>
+                        <a href="#leistungen">Leistungen</a>
+                        <a href="#projekte">Projekte</a>
+                        <a href="#kontakt">Kontakt</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <a href="#">Minecraft Development</a>
+                        <a href="#">Web Development</a>
+                        <a href="#">Discord Bots</a>
+                        <a href="#">Automatisierung</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <a href="#">Discord Server</a>
+                        <a href="#">GitHub</a>
+                        <a href="#">Shop</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MXDEV. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
 
-      function setLanguage(lang) {
-        document.documentElement.setAttribute("lang", lang);
+    <script>
+        // Schneefall Animation
+        function createSnowflake() {
+            const snowfall = document.getElementById('snowfall');
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + '%';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.opacity = Math.random();
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            
+            snowfall.appendChild(snowflake);
+            
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+        
+        setInterval(createSnowflake, 200);
 
-        switcherButtons.forEach(btn => {
-          btn.classList.toggle("active", btn.dataset.lang === lang);
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
         });
 
-        document.querySelectorAll("[data-i18n]").forEach(el => {
-          const txt = el.getAttribute("data-i18n-" + lang);
-          if (txt) el.innerHTML = txt;
+        // Active Nav Link
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
         });
-
-        updateYear();
-        localStorage.setItem("site-lang", lang);
-      }
-
-      switcherButtons.forEach(btn => {
-        btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
-      });
-
-      const savedLang = localStorage.getItem("site-lang") || "de";
-      setLanguage(savedLang);
-    });
-  </script>
+    </script>
 </body>
 </html>
