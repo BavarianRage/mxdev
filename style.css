@@ -2867,3 +2867,97 @@ body {
         padding: 0.5rem 1rem;
     }
 }
+/* ===== PROJECT TABLE ===== */
+.projects-table-section {
+    padding: 6rem 20px;
+}
+
+.projects-table {
+    display: grid;
+    gap: 1rem;
+}
+
+.table-header,
+.table-row {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr 2fr 1.5fr;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-radius: 16px;
+}
+
+.table-header {
+    background: rgba(255,255,255,0.05);
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+}
+
+.table-row {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    transition: all 0.35s;
+    position: relative;
+    overflow: hidden;
+}
+
+.table-row:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0,245,255,0.15);
+}
+
+/* Projektname */
+.project-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* ===== STATUS BADGES ===== */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* Farben */
+.status-badge.dev {
+    color: #4caf50;
+    border: 1px solid #4caf50;
+    background: rgba(76,175,80,0.15);
+    animation: pulse-dot 2s infinite;
+}
+
+.status-badge.done {
+    color: #22c55e;
+    border: 1px solid #22c55e;
+    background: rgba(34,197,94,0.15);
+}
+
+.status-badge.secret {
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    background: rgba(244,63,94,0.15);
+}
+
+/* Row Glow nach Status */
+.status-dev::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(76,175,80,0.15), transparent);
+    opacity: 0.6;
+}
+
+.status-secret::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(244,63,94,0.2), transparent);
+}
