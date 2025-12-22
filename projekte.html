@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekte - MXDEV</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Schneefall Animation -->
+    <div class="snowfall" id="snowfall"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="MXDEV Logo" class="logo-image">
+                <span>MXDEV</span>
+            </div>
+            
+            <!-- Burger Menu Button -->
+            <button class="burger-menu" id="burgerMenu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Fullscreen Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-content">
+            <div class="menu-links">
+                <a href="index.html" class="menu-link">
+                    <span class="menu-number">01</span>
+                    <span class="menu-text">Home</span>
+                </a>
+                <a href="leistungen.html" class="menu-link">
+                    <span class="menu-number">02</span>
+                    <span class="menu-text">Leistungen</span>
+                </a>
+                <a href="projekte.html" class="menu-link active-page">
+                    <span class="menu-number">03</span>
+                    <span class="menu-text">Projekte</span>
+                </a>
+                <a href="about.html" class="menu-link">
+                    <span class="menu-number">04</span>
+                    <span class="menu-text">Über mich</span>
+                </a>
+                <a href="kontakt.html" class="menu-link">
+                    <span class="menu-number">05</span>
+                    <span class="menu-text">Kontakt</span>
+                </a>
+                <a href="shop.html" class="menu-link shop-highlight">
+                    <span class="menu-number">06</span>
+                    <span class="menu-text">Shop</span>
+                </a>
+            </div>
+            
+            <div class="menu-footer">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/mxdev.eu/" target="_blank" class="social-link" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="18" cy="6" r="1" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.reddit.com/r/MXDEV/" target="_blank" class="social-link" aria-label="Reddit">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="9" cy="11" r="1.5" fill="currentColor"/>
+                            <circle cx="15" cy="11" r="1.5" fill="currentColor"/>
+                            <path d="M8 15C8 15 9.5 17 12 17C14.5 17 16 15 16 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">
+                    Meine <span class="gradient-text">Projekte</span>
+                </h1>
+                <p class="page-subtitle">Ein Einblick in meine aktuellen und abgeschlossenen Arbeiten</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Project -->
+    <section class="featured-project-section">
+        <div class="container-wide">
+            <div class="featured-project">
+                <div class="featured-badge-project">🚀 Aktuell in Entwicklung</div>
+                <div class="featured-project-content">
+                    <div class="featured-project-icon">⚔️</div>
+                    <h2 class="featured-project-title">FTSCraft</h2>
+                    <p class="featured-project-subtitle">Minecraft Roleplay Server</p>
+                    <p class="featured-project-description">
+                        Ein ambitioniertes Minecraft-Projekt in der neuesten Version mit Fokus auf Fantasie-Roleplay. Mit custom Features und innovativen Systemen erschaffen wir ein einzigartiges Spielerlebnis. Weitere Details werden bald bekannt gegeben – stay tuned!
+                    </p>
+                    <div class="featured-project-tags">
+                        <span class="project-tag">Minecraft Server</span>
+                        <span class="project-tag">Neueste Version</span>
+                        <span class="project-tag">Fantasie Roleplay</span>
+                        <span class="project-tag">Custom Features</span>
+                    </div>
+                    <div class="featured-project-status">
+                        <div class="status-indicator pulsing"></div>
+                        <span>In Entwicklung</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Projects -->
+    <section class="projects-grid-section">
+        <div class="container-wide">
+            <h2 class="section-heading">Weitere Projekte</h2>
+            
+            <div class="projects-grid">
+                
+                <!-- Website Support Projects -->
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <div class="project-icon-small">🌐</div>
+                        <span class="project-count">6 Projekte</span>
+                    </div>
+                    <h3 class="project-card-title">Website Support</h3>
+                    <p class="project-card-description">
+                        Diverse Support-Projekte für verschiedene Kunden. Von Bugfixes über Feature-Implementierungen bis hin zu Performance-Optimierungen – professionelle Unterstützung für bestehende Websites.
+                    </p>
+                    <div class="project-card-tags">
+                        <span class="mini-tag">Bugfixing</span>
+                        <span class="mini-tag">Features</span>
+                        <span class="mini-tag">Optimierung</span>
+                    </div>
+                    <div class="project-card-footer">
+                        <span class="project-status completed">✓ Abgeschlossen</span>
+                    </div>
+                </div>
+
+                <!-- Logo Design Projects -->
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <div class="project-icon-small">🎨</div>
+                        <span class="project-count">2 Projekte</span>
+                    </div>
+                    <h3 class="project-card-title">Logo Designs</h3>
+                    <p class="project-card-description">
+                        Kreative Logo-Designs für zwei unterschiedliche Kunden. Von der Konzeption bis zur finalen Umsetzung – einzigartige Markenidentitäten, die überzeugen.
+                    </p>
+                    <div class="project-card-tags">
+                        <span class="mini-tag">Branding</span>
+                        <span class="mini-tag">Design</span>
+                        <span class="mini-tag">Corporate</span>
+                    </div>
+                    <div class="project-card-footer">
+                        <span class="project-status completed">✓ Abgeschlossen</span>
+                    </div>
+                </div>
+
+                <!-- Website Design Project -->
+                <div class="project-card confidential">
+                    <div class="confidential-badge">🔒 Vertraulich</div>
+                    <div class="project-card-header">
+                        <div class="project-icon-small">💼</div>
+                        <span class="project-count">1 Projekt</span>
+                    </div>
+                    <h3 class="project-card-title">Website Design</h3>
+                    <p class="project-card-description">
+                        Umfangreiches Website-Design-Projekt für einen Kunden. Aufgrund von Vertraulichkeitsvereinbarungen können keine weiteren Details veröffentlicht werden.
+                    </p>
+                    <div class="project-card-tags">
+                        <span class="mini-tag">Webdesign</span>
+                        <span class="mini-tag">UI/UX</span>
+                        <span class="mini-tag">NDA</span>
+                    </div>
+                    <div class="project-card-footer">
+                        <span class="project-status completed">✓ Abgeschlossen</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="projects-stats">
+        <div class="container">
+            <div class="stats-row">
+                <div class="stat-box">
+                    <div class="stat-value">10+</div>
+                    <div class="stat-label">Projekte insgesamt</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Aktives Großprojekt</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Kundenzufriedenheit</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-final">
+        <div class="container">
+            <div class="cta-content-box">
+                <h2 class="cta-headline">Lass uns zusammenarbeiten!</h2>
+                <p class="cta-subline">Du hast ein spannendes Projekt im Kopf? Egal ob Website, Plugin oder Discord Bot – ich helfe dir bei der Umsetzung!</p>
+                <div class="cta-btn-group">
+                    <a href="kontakt.html" class="btn btn-primary btn-large">Projekt besprechen</a>
+                    <a href="leistungen.html" class="btn btn-secondary btn-large">Meine Leistungen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="logo.png" alt="MXDEV Logo" class="logo-image">
+                        <span>MXDEV</span>
+                    </div>
+                    <p>Futuristische Development Lösungen</p>
+                </div>
+                <div class="footer-right">
+                    <a href="kontakt.html" class="footer-contact-btn">Kontakt aufnehmen</a>
+                    <p class="footer-copyright">&copy; 2024 MXDEV. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Schneefall Animation
+        function createSnowflake() {
+            const snowfall = document.getElementById('snowfall');
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + '%';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.opacity = Math.random();
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            
+            snowfall.appendChild(snowflake);
+            
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+        
+        setInterval(createSnowflake, 200);
+
+        // Burger Menu Toggle
+        const burgerMenu = document.getElementById('burgerMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        let menuOpen = false;
+
+        burgerMenu.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            
+            if (menuOpen) {
+                burgerMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            } else {
+                burgerMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+                menuOpen = false;
+            });
+        });
+    </script>
+</body>
+</html>
