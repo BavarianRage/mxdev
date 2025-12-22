@@ -1,137 +1,240 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MXDEV Shop</title>
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="stylesheet" href="style.css">
-<style>
-/* ===== Shop Aufbau Style ===== */
-.shop-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 60vh;
-    text-align: center;
-    color: #fff;
-    padding: 60px 20px;
-}
-.shop-placeholder h1 {
-    font-size: 2.5rem;
-    background: linear-gradient(90deg, #4f46e5, #2563eb);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
-}
-.shop-placeholder p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    line-height: 1.6;
-    color: #cbd5e1;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - MXDEV</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- Schneefall -->
-<div class="snowfall" id="snowfall"></div>
-
-<!-- NAVIGATION / HEADER -->
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="logo">
-            <img src="logo.png" alt="MXDEV Logo" class="logo-image">
-            <span>MXDEV</span>
+    <!-- Schneefall Animation -->
+    <div class="snowfall" id="snowfall"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="MXDEV Logo" class="logo-image">
+                <span>MXDEV</span>
+            </div>
+            <button class="burger-menu" id="burgerMenu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <button class="burger-menu" id="burgerMenu" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
-    </div>
-</nav>
+    </nav>
 
-<!-- Fullscreen Menu Overlay -->
-<div class="menu-overlay" id="menuOverlay">
-    <div class="menu-content">
-        <div class="menu-links">
-            <a href="index.html" class="menu-link"><span class="menu-number">01</span><span class="menu-text">Home</span></a>
-            <a href="leistungen.html" class="menu-link"><span class="menu-number">02</span><span class="menu-text">Leistungen</span></a>
-            <a href="projekte.html" class="menu-link"><span class="menu-number">03</span><span class="menu-text">Projekte</span></a>
-            <a href="about.html" class="menu-link"><span class="menu-number">04</span><span class="menu-text">Über mich</span></a>
-            <a href="kontakt.html" class="menu-link"><span class="menu-number">05</span><span class="menu-text">Kontakt</span></a>
-            <a href="shop.html" class="menu-link shop-highlight active-page"><span class="menu-number">06</span><span class="menu-text">Shop</span></a>
-        </div>
-        <div class="menu-footer">
-            <div class="social-links">
-                <a href="https://www.instagram.com/mxdev.eu/" target="_blank" class="social-link">IG</a>
-                <a href="https://www.reddit.com/r/MXDEV/" target="_blank" class="social-link">Reddit</a>
+    <!-- Fullscreen Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-content">
+            <div class="menu-links">
+                <a href="index.html" class="menu-link">Home</a>
+                <a href="leistungen.html" class="menu-link">Leistungen</a>
+                <a href="projekte.html" class="menu-link">Projekte</a>
+                <a href="about.html" class="menu-link">Über mich</a>
+                <a href="kontakt.html" class="menu-link">Kontakt</a>
+                <a href="shop.html" class="menu-link active-page">Shop</a>
             </div>
         </div>
     </div>
-</div>
 
-<!-- SHOP-PLATZHALTER -->
-<section class="shop-placeholder">
-    <h1>Shop wird aufgebaut 🚧</h1>
-    <p>Hey! Unser Shop ist noch in Arbeit. Bald kannst du hier unsere Services, Plugins, Designs und Software direkt kaufen. Bleib dran!</p>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div class="logo"><img src="logo.png" alt="MXDEV Logo"><span>MXDEV</span></div>
-                <p>Futuristische Development Lösungen</p>
-            </div>
-            <div class="footer-right">
-                <a href="kontakt.html" class="footer-contact-btn">Kontakt aufnehmen</a>
-                <p>&copy; 2024 MXDEV. Alle Rechte vorbehalten.</p>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">Willkommen im <span class="gradient-text">Shop</span></h1>
+                <p class="page-subtitle">Hier findest du unsere Leistungen und Preise.</p>
             </div>
         </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-content">
+        <div class="container-wide">
+            <!-- Service 1: Webdesign -->
+            <div class="service-block">
+                <div class="service-visual">
+                    <div class="service-icon-mega">🌐</div>
+                </div>
+                <div class="service-info">
+                    <h2 class="service-heading">Webdesign für Firmen</h2>
+                    <p class="service-text">Moderne, responsive Websites für Unternehmen jeder Größe.</p>
+                    <p class="price-info">Preis: 60 - 220 € (Vorauszahlung: 15 €)</p>
+                    <button class="add-to-cart" data-service="Webdesign" data-price="60-220" data-prepayment="15">In den Warenkorb</button>
+                </div>
+            </div>
+
+            <!-- Service 2: Minecraft Plugin -->
+            <div class="service-block">
+                <div class="service-visual">
+                    <div class="service-icon-mega">💻</div>
+                </div>
+                <div class="service-info">
+                    <h2 class="service-heading">Minecraft Plugins</h2>
+                    <p class="service-text">Custom Minecraft Plugins für deinen Server.</p>
+                    <p class="price-info">Preis: 15 - 90 € (keine Vorauszahlung)</p>
+                    <button class="add-to-cart" data-service="Minecraft Plugin" data-price="15-90" data-prepayment="0">In den Warenkorb</button>
+                </div>
+            </div>
+
+            <!-- Service 3: Logo Design -->
+            <div class="service-block">
+                <div class="service-visual">
+                    <div class="service-icon-mega">🎨</div>
+                </div>
+                <div class="service-info">
+                    <h2 class="service-heading">Logo & Grafikdesign</h2>
+                    <p class="service-text">Professionelles Logo-Design und Corporate Identity.</p>
+                    <p class="price-info">Preis: 40 - 120 € (Vorauszahlung: 15 €)</p>
+                    <button class="add-to-cart" data-service="Logo Design" data-price="40-120" data-prepayment="15">In den Warenkorb</button>
+                </div>
+            </div>
+
+            <!-- Service 4: Softwareprogrammierung -->
+            <div class="service-block">
+                <div class="service-visual">
+                    <div class="service-icon-mega">🖥️</div>
+                </div>
+                <div class="service-info">
+                    <h2 class="service-heading">Softwareprogrammierung</h2>
+                    <p class="service-text">Maßgeschneiderte Softwarelösungen für deine Anforderungen.</p>
+                    <p class="price-info">Preis: 80 - 300 € (Vorauszahlung: 30 €)</p>
+                    <button class="add-to-cart" data-service="Softwareprogrammierung" data-price="80-300" data-prepayment="30">In den Warenkorb</button>
+                </div>
+            </div>
+
+            <!-- Service 5: Datenbankverbindung -->
+            <div class="service-block">
+                <div class="service-visual">
+                    <div class="service-icon-mega">🗄️</div>
+                </div>
+                <div class="service-info">
+                    <h2 class="service-heading">Datenbank-Verbindungen</h2>
+                    <p class="service-text">Professionelle Datenbank-Anbindungen und Management.</p>
+                    <p class="price-info">Preis: 30 € (keine Vorauszahlung)</p>
+                    <button class="add-to-cart" data-service="Datenbankverbindung" data-price="30" data-prepayment="0">In den Warenkorb</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <div class="cart" id="cart" style="display: none;">
+        <h2>Warenkorb</h2>
+        <div id="cart-items"></div>
+        <p id="total-price">Gesamtpreis: 0 €</p>
+        <button id="checkout">Zur Kasse</button>
+        <button id="close-cart">Schließen</button>
     </div>
-</footer>
 
-<script>
-// SCHNEEFALL
-function createSnowflake(){ 
-    const snowfall=document.getElementById('snowfall'); 
-    const snowflake=document.createElement('div'); 
-    snowflake.className='snowflake'; 
-    snowflake.innerHTML='❄'; 
-    snowflake.style.left=Math.random()*100+'%'; 
-    snowflake.style.animationDuration=Math.random()*3+2+'s'; 
-    snowflake.style.opacity=Math.random(); 
-    snowflake.style.fontSize=Math.random()*10+10+'px'; 
-    snowfall.appendChild(snowflake); 
-    setTimeout(()=>{snowflake.remove();},5000);
-}
-setInterval(createSnowflake,200);
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="logo.png" alt="MXDEV Logo" class="logo-image">
+                        <span>MXDEV</span>
+                    </div>
+                    <p>Futuristische Development Lösungen</p>
+                </div>
+                <div class="footer-right">
+                    <a href="kontakt.html" class="footer-contact-btn">Kontakt aufnehmen</a>
+                    <p class="footer-copyright">&copy; 2024 MXDEV. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-// BURGER MENU RECHTS OBEN
-const burgerMenu=document.getElementById('burgerMenu'); 
-const menuOverlay=document.getElementById('menuOverlay'); 
-let menuOpen=false;
-burgerMenu.addEventListener('click',()=>{
-    menuOpen=!menuOpen; 
-    if(menuOpen){ 
-        burgerMenu.classList.add('active'); 
-        menuOverlay.classList.add('active'); 
-        document.body.style.overflow='hidden'; 
-    } else { 
-        burgerMenu.classList.remove('active'); 
-        menuOverlay.classList.remove('active'); 
-        document.body.style.overflow=''; 
-    } 
-});
-document.querySelectorAll('.menu-link').forEach(link=>{
-    link.addEventListener('click',()=>{
-        burgerMenu.classList.remove('active'); 
-        menuOverlay.classList.remove('active'); 
-        document.body.style.overflow=''; 
-        menuOpen=false; 
-    });
-});
-</script>
+    <script>
+        // Schneefall Animation
+        function createSnowflake() {
+            const snowfall = document.getElementById('snowfall');
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + '%';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.opacity = Math.random();
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            snowfall.appendChild(snowflake);
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+        setInterval(createSnowflake, 200);
+
+        // Warenkorb-Funktionalität
+        const cart = [];
+        const cartElement = document.getElementById('cart');
+        const cartItemsElement = document.getElementById('cart-items');
+        const totalPriceElement = document.getElementById('total-price');
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const service = button.getAttribute('data-service');
+                const priceRange = button.getAttribute('data-price');
+                const prepayment = button.getAttribute('data-prepayment');
+                const price = prepayment > 0 ? parseInt(priceRange.split('-')[0]) + parseInt(prepayment) : parseInt(priceRange.split('-')[0]);
+                
+                cart.push({ service, price, prepayment });
+                updateCart();
+                showCart();
+            });
+        });
+
+        function updateCart() {
+            cartItemsElement.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+                cartItemsElement.innerHTML += `<p>${item.service}: ${item.price} € (Vorauszahlung: ${item.prepayment} €)</p>`;
+                total += item.price;
+            });
+            totalPriceElement.innerText = `Gesamtpreis: ${total} €`;
+        }
+
+        function showCart() {
+            cartElement.style.display = 'block';
+        }
+
+        document.getElementById('close-cart').addEventListener('click', () => {
+            cartElement.style.display = 'none';
+        });
+
+        document.getElementById('checkout').addEventListener('click', () => {
+            // Hier sollte der Stripe-Link aufgerufen werden
+            alert('Zur Kasse gehen (Stripe-Link hier einfügen)');
+        });
+
+        // Burger Menu Toggle
+        const burgerMenu = document.getElementById('burgerMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        let menuOpen = false;
+
+        burgerMenu.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                burgerMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            } else {
+                burgerMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+                menuOpen = false;
+            });
+        });
+    </script>
 </body>
 </html>
